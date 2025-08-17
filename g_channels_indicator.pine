@@ -1,0 +1,12 @@
+//@version=4
+study("G-Channels",overlay=true)
+length = input(100),src = input(close)
+//----
+a = 0.,b = 0.
+a := max(src,nz(a[1])) - nz(a[1] - b[1])/length
+b := min(src,nz(b[1])) + nz(a[1] - b[1])/length
+avg = avg(a,b)
+//----
+plot(a,"Upper",color=color.blue,linewidth=2,transp=0)
+plot(avg,"Average",color=color.orange,linewidth=2,transp=0)
+plot(b,"Lower",color=color.blue,linewidth=2,transp=0)
