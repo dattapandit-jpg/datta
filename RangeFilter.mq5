@@ -86,8 +86,8 @@ int OnInit()
    PlotIndexSetInteger(2, PLOT_DRAW_BEGIN, InpPeriod);
    
    //--- setting arrow codes
-   PlotIndexSetInteger(3, PLOT_ARROW, 233);  // Up arrow
-   PlotIndexSetInteger(4, PLOT_ARROW, 234);  // Down arrow
+   PlotIndexSetInteger(3, PLOT_ARROW, 233);
+   PlotIndexSetInteger(4, PLOT_ARROW, 234);
    
    //--- setting arrow offset
    PlotIndexSetInteger(3, PLOT_ARROW_SHIFT, 10);
@@ -283,7 +283,7 @@ void CalculateSignals(int index, double src, double filter)
       else if(shortCond)
          condIni = -1;
       else
-         condIni = condIni; // keep previous value
+         condIni = condIni;
    }
    
    bool longCondition = longCond && (index > 0 ? condIni == -1 : false);
